@@ -31,7 +31,7 @@ router.get('/auth/google/callback',
       console.log(req.user.profile.id);
       req.session.token = req.user.token;
       req.session.id = req.user.profile.id;
-      
+      console.log('Im here');
       User.findOne({
         id: req.user.profile.id
       }).then((user) => {
